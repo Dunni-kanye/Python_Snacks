@@ -6,7 +6,7 @@ while start  in ['YES']:
 
 	print('Guess a number from 1-1000')
 
-	game = int(input('choose a number to be guessed'))
+	game = int(input('choose a number to be guessed:'))
 
 	guess = randint(1,1001)
 

@@ -3,10 +3,11 @@
 #print the result.
 
 
-feet = 5
+feet = int (input("Enter a number for feet:"))
+
 one_foot = 0.305
 
-convert = 0.305 * 5
+convert = 0.305 * feet
 print(f'{convert:.2f}'"m")
 
  

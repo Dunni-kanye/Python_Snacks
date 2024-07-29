@@ -6,9 +6,11 @@
 
 
 
-radius = 1.75
-length = 4.54
-pie = 3.142
+radius = int (input("Enter the value of radius:"))
+
+length = int (input("Enter the value of length:"))
+
+Pi = 3.142
 area = pie * radius **2
 volume = area * length
 

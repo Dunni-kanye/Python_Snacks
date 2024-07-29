@@ -7,8 +7,10 @@
 
 
 value = int (input("Enter the value:"))
-for value in range (0 - 1000):
-	digit = num % 10 * value
+if not(0 <= value <= 1000):
+	
 	sum = value + digit
 
-	print(sum)
+	
+print(sum)
+t

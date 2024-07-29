@@ -3,7 +3,8 @@
 #Represent one pound as 0.454kilograms
 
 
-pounds = 60
+pounds = int (input("Enter the value of pounds:"))
+
 one_pound_in_kilogram = 0.454
 convert = pounds * one_pound_in_kilogram
 
