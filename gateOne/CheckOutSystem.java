@@ -53,8 +53,11 @@ public class CheckOutSystem {
 	
 	double vat = subTotal * vatRate;
         double total = subTotal - discount + vat;
-	
-	
+
+	System.out.print("Amount Paid: ");
+        double amountPaid = input.nextDouble();
+        double balance = amountPaid - total;
+
 	System.out.printf("Discount calculated: %.2f\n", discount);
         System.out.printf("VAT calculated: %.2f\n", vat);
         System.out.printf("Total calculated: %.2f\n", total);
@@ -79,11 +82,24 @@ public class CheckOutSystem {
 
         }
 
-	//System.out.printf("%10s%7.2f%8d%n",productNames, productQuantities, productPrices);
-	//System.out.printf("%10s%7.2f%n",productNames, productQuantities);
+	System.out.println("----------------------------------------------------------------");
+        System.out.printf("Sub Total: %25.2f\n", subTotal);
+        System.out.printf("Discount: %26.2f\n", discount);
+        System.out.printf("VAT @ 17.5%%: %23.2f\n", vat);
+	System.out.println("============================================================");
 
+        System.out.printf("Bill Total: %24.2f\n", total);
 	
+	
+        System.out.printf("Amount Paid: %23.2f\n", amountPaid);
+        System.out.printf("Balance: %26.2f\n", balance);
+        	System.out.println("============================================================");
+	System.out.println("THANK YOU FOR YOUR PATRONAGE");
+        System.out.println("-------------------------------------");
 
+       
+        
+	
 
 	
 }
