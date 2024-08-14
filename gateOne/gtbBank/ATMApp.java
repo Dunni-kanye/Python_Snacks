@@ -1,8 +1,8 @@
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.Random;
 import java.util.Scanner;
 
-public class ATMApp {
+public class AtmApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
@@ -11,9 +11,13 @@ public class ATMApp {
         ArrayList<String> pins = new ArrayList<>();
 
 	System.out.println("Welcome");
-	System.out.println("Kindly type Next to select an option:");
+	System.out.println("Kindly type 'Next' to select an option:");
 	String next = scanner.next();
-
+	if (!next.equals("Next")) {
+	System .out.println("Please type 'Next' only");
+	next = scanner.next();
+					
+	}
         boolean transactions = true;
 
         while (transactions) {
@@ -47,13 +51,13 @@ public class ATMApp {
                         break;
                     }
 
-                    int accountNumber = random.nextInt(900000) + 100000;
+                    int accountNumber = random.nextInt(900000);
                     accountNumbers.add(accountNumber);
                     balances.add(0.0);
                     pins.add(pin);
                     System.out.println("Account successfully created");
                     System.out.println("Your account number is: " + accountNumber);
-                    break;
+                     break;
 
                 case 2:
                     System.out.print("Enter your account number: ");
@@ -70,7 +74,7 @@ public class ATMApp {
                     break;
 
                 case 3:
-                    System.out.print("Enter your account number: ");
+                     System.out.print("Enter your account number: ");
                     accountNumber = scanner.nextInt();
                     index = accountNumbers.indexOf(accountNumber);
                     if (index != -1) {
@@ -121,9 +125,9 @@ public class ATMApp {
    			 System.out.print("Enter your account number: ");
    			 accountNumber = scanner.nextInt();
     			index = accountNumbers.indexOf(accountNumber);
-    
+    			System.out.println("Create recipient's account first if you have not:");
    			 if (index != -1) {
-       				 System.out.print("Enter the recipient's account number: ");
+       				 System.out.println ("Enter the recipient's account number: ");
        				 int recipientAccount = scanner.nextInt();
        				 int recipientIndex = accountNumbers.indexOf(recipientAccount);
 
@@ -150,7 +154,7 @@ public class ATMApp {
                    	 System.out.println("------------------------------------------------------------\n");
                			 }
            		 } else {
-               		 System.out.println("Invalid transfer amount or insufficient funds.");
+               		 System.out.println("Invalid transfer amount  or insufficient funds.");
            		 }
        			 } else {
            		 System.out.println("Recipient account not found.");

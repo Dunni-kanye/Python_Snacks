@@ -41,17 +41,80 @@ def ATM_app():
             print("Account successfully created")
             print(f"Your account number is: {account_number}")
 
+        elif choice == 2:
+            account_number = int(input("Enter your account number: "))
+            if account_number in account_numbers:
+                index = account_numbers.index(account_number)
+                print(f"Account number {account_number} closed successfully.")
+                account_numbers.pop(index)
+                balances.pop(index)
+                pins.pop(index)
+            else:
+                print("Account not found.")
 
+        elif choice == 3:
+            account_number = int(input("Enter your account number: "))
+            if account_number in account_numbers:
+                index = account_numbers.index(account_number)
+                amount = float(input("Enter deposit amount: "))
+                if amount > 0:
+                    balances[index] += amount
+                    print(f"Deposit successful! New balance: ${balances[index]}")
+                else:
+                    print("Invalid deposit amount.")
+            else:
+                print("Account not found.")
 
+        elif choice == 4:
+            account_number = int(input("Enter your account number: "))
+            if account_number in account_numbers:
+                index = account_numbers.index(account_number)
+                amount = float(input("Enter withdrawal amount: "))
+                if 0 < amount <= balances[index]:
+                    balances[index] -= amount
+                    print(f"Withdrawal successful! New balance: ${balances[index]}")
+                else:
+                    print("Invalid withdrawal amount or insufficient funds.")
+            else:
+                print("Account not found.")
 
+        elif choice == 5:
+            account_number = int(input("Enter your account number: "))
+            if account_number in account_numbers:
+                index = account_numbers.index(account_number)
+                print(f"Your current balance is: ${balances[index]}")
+            else:
+                print("Account not found.")
 
+        elif choice == 6:
+            account_number = int(input("Enter your account number: "))
+            if account_number in account_numbers:
+                index = account_numbers.index(account_number)
+                recipient_account = int(input("Enter the recipient's account number: "))
+                if recipient_account in account_numbers:
+                    recipient_index = account_numbers.index(recipient_account)
+                    transfer_amount = float(input("Enter transfer amount: "))
 
+                    if 0 < transfer_amount <= balances[index]:
+                        balances[index] -= transfer_amount
+                        balances[recipient_index] += transfer_amount
+                        print("Transfer successful!")
+                        print(f"Your new balance: ${balances[index]}")
+                        print(f"Recipient's new balance: ${balances[recipient_index]}")
 
+                        generate_receipt = input("Would you like to generate a receipt? (yes/no): ")
+                        if generate_receipt.lower() == "yes":
+                            print("\n---------- Transfer Receipt --------------------------")
+                            print(f"Sender Account: {account_number}")
+                            print(f"Recipient Account: {recipient_account}")
+                            print(f"Transfer Amount: ${transfer_amount}")
+                            print("------------------------------------------------------------\n")
+                    else:
+                        print("Invalid transfer amount or insufficient funds.")
+                else:
+                    print("Recipient account not found.")
+            else:
+                print("Your account number not found.")
 
 
 ATM_app()
-
-
-
-
-	

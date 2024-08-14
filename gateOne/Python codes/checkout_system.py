@@ -1,4 +1,5 @@
 from datetime import datetime
+
 def checkout_system():
     customer_name = input("What is the customer's name? ")
 
@@ -16,7 +17,7 @@ def checkout_system():
 
         quantity = int(input("How many pieces? "))
         product_quantities.append(quantity)
- 
+
         price = float(input("How much per unit? "))
         product_prices.append(price)
 
@@ -53,17 +54,16 @@ def checkout_system():
 
     for product_name, quantity, price in zip(product_names, product_quantities, product_prices):
         item_total = price * quantity
-
-        print(f"       {product_name}     {quantity}      {price:.2f}   {item_total:.2f}")
+        print(f"{product_name:<18} {quantity:<5} {price:>7.2f} {item_total:>12.2f}")
 
     print("------------------------------------------------------------------------------------------")
-    print(f"Sub Total:                {sub_total:.2f}")
-    print(f"Discount:                 {discount:.2f}")
-    print(f"VAT @ 17.5%:              {vat:.2f}")
+    print(f"{'Sub Total:':<28} {sub_total:>12.2f}")
+    print(f"{'Discount:':<28} {discount:>12.2f}")
+    print(f"{'VAT @ 17.5%:':<28} {vat:>12.2f}")
     print("=" * 60)
-    print(f"Bill Total:               {total:.2f}")
-    print(f"Amount Paid:              {amount_paid:.2f}")
-    print(f"Balance:                  {balance:.2f}")
+    print(f"{'Bill Total:':<28} {total:>12.2f}")
+    print(f"{'Amount Paid:':<28} {amount_paid:>12.2f}")
+    print(f"{'Balance:':<28} {balance:>12.2f}")
     print("============================================================================================")
     print("THANK YOU FOR YOUR PATRONAGE")
     print("-------------------------------------------------------------------------------------------")
