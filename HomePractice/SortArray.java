@@ -24,25 +24,29 @@ import java.util.Arrays;
 public class SortArray {
 
     public void sortEvenOdd(int[] number) {
-        int[] temporary = new int[number.length];
+        int[] temp = new int[number.length];
         int evenIndex = 0;
         int oddIndex = number.length - 1;
 
-        for (int count = 0; count < number.length; count++) {
-            if (number[count] % 2 == 0) {
-                temporary[evenIndex] = number[count];
+        for (int i = 0; i < number.length; i++) {
+            if (number[i] % 2 == 0) {
+                temp[evenIndex] = number[i];
                 evenIndex++;
             } else {
-                temporary[oddIndex] = number[count];
+                temp[oddIndex] = number[i];
                 oddIndex--;
             }
         }
+
        
+        for (int i = 0; i < number.length; i++) {
+            number[i] = temp[i];
+        }
     }
 
     public static void main(String[] args) {
         SortArray index = new SortArray();
-        int[] number = {2, 1, 4, 3, 6, 4};
+        int[] number = {2, 1, 4, 3, 6, 5};
         index.sortEvenOdd(number);
         System.out.println("Sorted Array: " + Arrays.toString(number));
     }
