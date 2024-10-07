@@ -1,5 +1,7 @@
 from unittest import TestCase
+
+from myPythonCode.classTask.get_single_string import single
+
 class TestGetSingleString(TestCase):
     def test_get_single_string(self):
-        result = get_single_string.single('abc','xyz')
-        self.assertEqual('xycabz', result)
+        self.assertEqual(single( 'abc','xyz'),'xycabz')
